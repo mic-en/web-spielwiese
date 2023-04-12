@@ -1,34 +1,52 @@
-select{
-    border:none;
-    padding: 10px 20px;
-    border-radius:5px;
-  }
-  
-  select:focus{
-    outline:none;
-  }
+select {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
 
-  .special {
-    color: red;
-  }
-    
-  p {
-    color: blue;
-  }
+select:focus {
+  outline: none;
+}
 
-  .code-box {
-    border: 2px solid;
-  }
+.special {
+  color: red;
+}
 
-  .box {
-    margin: 30px;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(252, 85, 85);
-    transform: rotate(0.8turn);
-  }
-  
+p {
+  color: blue;
+}
 
-  
+.code-box {
+  border: 2px solid;
+}
 
-  
+.box {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(252, 85, 85);
+  transform: rotate(0.8turn);
+}
+
+.contentbox {
+  border: 2px solid;
+}
+
+.percentagebox {
+  border: 5px solid darkblue;
+  width: 300px;
+  margin: 10%;
+  padding: 10%;
+}
+
+.imagewrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+  border: solid 2px;
+}
+
+img {
+  width: 50%;
+}
