@@ -7,8 +7,44 @@
     <title>Spielwiese</title>
     <link rel="stylesheet" href="style.css">
   </head>
+
+  <select name="proglanguages" id="proglanguages">
+    <option value="java">Java</option>
+    <option value="javascript" selected>JavaScript</option>
+    <option value="python">Python</option>
+    <option value="c#">C#</option>
+    <option value="c++">C++</option>
+  </select>
+
   <body>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+    <p class="special">What color am I?</p>
+
+
+    <img src="img/kaffee_java_icon.png" alt="">
+
+    <pre class="code-box"><code class="java">
+      int werte[] = new int[]{30, 24, 12, 50, 11, 49, 11};
+      int temp;
+      int len = werte.length;
+
+      for (int p = 0; p &gt;= len - 2; p++) {
+          for(int i = 0; i &gt;= len - 2 - p; i++){
+              if(werte[i] > werte[i+1]){
+                  temp = werte[i+1];
+                  werte[i+1] = werte[i];
+                  werte[i] = temp;
+              }
+          }
+      }</code></pre>
+
+    <div class="box"></div>
+
     <h1 id="time"></h1>
+
+    <p>hier kommt ein back-to-top button hin</p>
+
 	<script src="script.js"></script>
   </body>
 </html>
