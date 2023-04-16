@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Spielwiese</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
 
-  <select name="proglanguages" id="proglanguages">
-    <option value="java">Java</option>
-    <option value="javascript" selected>JavaScript</option>
-    <option value="python">Python</option>
-    <option value="c#">C#</option>
-    <option value="c++">C++</option>
-  </select>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Spielwiese</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
 
-  <body>
-    <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet.
-    </p>
+<select name="proglanguages" id="proglanguages">
+  <option value="java">Java</option>
+  <option value="javascript" selected>JavaScript</option>
+  <option value="python">Python</option>
+  <option value="c#">C#</option>
+  <option value="c++">C++</option>
+</select>
 
-    <p class="special">What color am I?</p>
+<body>
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+    sit amet.
+  </p>
 
-    <div class="contentbox"></div>
+  <p class="special">What color am I?</p>
 
-    <div class="percentagebox">
-      I have margin and padding set to 10% on all sides.
-    </div>
+  <label for="start">Start date:</label>
+  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
 
-    <div class="imagewrapper">
-      <img src="imgages/kaffee_java_icon.png" alt="" />
-      <img src="imgages/kochelsee.jpg" alt="" />
-    </div>
+  <div class="contentbox"></div>
 
-    <pre class="code-box">
+  <div class="percentagebox">
+    I have margin and padding set to 10% on all sides.
+  </div>
+
+  <div class="imagewrapper">
+    <img src="images/kaffee_java_icon.png" alt="" />
+    <img src="images/kochelsee.jpg" alt="" />
+  </div>
+
+  <pre class="code-box">
       <code class="java">
       int werte[] = new int[]{30, 24, 12, 50, 11, 49, 11};
       int temp;
@@ -60,12 +64,13 @@
     </code>
     </pre>
 
-    <div class="box"></div>
+  <div class="box"></div>
 
-    <h2 id="time"></h2>
+  <h2 id="time"></h2>
 
-    <p>hier kommt ein back-to-top button hin</p>
+  <p>hier kommt ein back-to-top button hin</p>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="scripts/script.js"></script>
+</body>
+
 </html>
