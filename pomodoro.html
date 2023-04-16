@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Timer</title>
-    <link rel="stylesheet" href="styles/pomodoro-style.css" />
-</head>
-
-<body>
-    <div class="container">
-        <h1>Timer</h1>
-        <div class="ipt">
-            <input id="inputh" type="number" placeholder="hour">
-            <input id="inputm" type="number" placeholder="minute">
-            <input id="inputs" type="number" placeholder="second">
-        </div>
-        <div class="btn">
-            <button id="btn-start" onclick="start_counting()">Start</button>
-            <button id="btn-pause" onclick="pause_counting()">Pause</button>
-            <button id="btn-stop" onclick="end_counting()">Stop</button>
-        </div>
-        <p id="currentTime">current time: </p>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles/pomodoro.css">
+  </head>
+  <body>
+    <div class="timer">
+      <h1>Pomodoro Timer</h1>
+      <div class="time-left">25:00</div>
+      <div class="buttons">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="reset-btn">Reset</button>
+      </div>
     </div>
-</body>
+    <script src="scripts/pomodoro.js"></script>
+  </body>
+</html>
