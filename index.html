@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 
+<body>
 <h1><a href="https://mic-en.github.io/spielwiese/">Ich bin hier</a></h1>
 
 <select name="proglanguages" id="proglanguages">
@@ -19,58 +20,7 @@
   <option value="c++">C++</option>
 </select>
 
-<body>
-  <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-    sit amet.
-  </p>
-
-  <p class="special">What color am I?</p>
-
-  <label for="start">Start date:</label>
-  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
-
-  <div class="contentbox"></div>
-
-  <div class="percentagebox">
-    I have margin and padding set to 10% on all sides.
-  </div>
-
-  <div class="imagewrapper">
-    <img src="images/kaffee_java_icon.png" alt="" />
-    <img src="images/kochelsee.jpg" alt="" />
-  </div>
-
-  <pre class="code-box">
-      <code class="java">
-      int werte[] = new int[]{30, 24, 12, 50, 11, 49, 11};
-      int temp;
-      int len = werte.length;
-
-      for (int p = 0; p &gt;= len - 2; p++) {
-          for(int i = 0; i &gt;= len - 2 - p; i++){
-              if(werte[i] > werte[i+1]){
-                  temp = werte[i+1];
-                  werte[i+1] = werte[i];
-                  werte[i] = temp;
-              }
-          }
-      }
-    </code>
-    </pre>
-
-  <div class="box"></div>
-
-  <h2 id="time"></h2>
-
-  <p>hier kommt ein back-to-top button hin</p>
+  <p id="time"></p> 
 
   <script src="scripts/script.js"></script>
 </body>
