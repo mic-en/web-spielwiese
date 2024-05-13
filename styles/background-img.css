@@ -1,0 +1,7 @@
+.bg-image {
+    background-image: url("../images/kochelsee.jpg");
+    padding: 20em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}

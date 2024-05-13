@@ -1,0 +1,12 @@
+p {
+    color: red;
+  }
+  
+  .box p {
+    color: green;
+  }
+  
+  div p {
+    color: blue;
+  }
+  
