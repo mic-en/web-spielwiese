@@ -1,0 +1,30 @@
+html {
+    font-family: sans-serif;
+  }
+  body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+  }
+
+.resultParas {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
