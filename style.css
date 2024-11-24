@@ -1,0 +1,46 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F3F5F6;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.header-image {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline {
+    color: #831D17;
+}
+
+.image-container {
+    background-color: white;
+    padding: 16px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: #831D17;
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
