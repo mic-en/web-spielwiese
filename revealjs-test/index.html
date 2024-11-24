@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="dist/theme/black.css">
 
 	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.css">
 </head>
 
 <body>
@@ -34,6 +34,27 @@
 					<li><a href="#kapitel-5">Höhere Funktionen</a></li>
 				</ul>
 			</section> -->
+
+			<section>
+				<h3>Wie füge ich Code Beispiele ein?</h3>
+				<h4>JavaScript Beispiel</h4>
+				<pre><code class="language-javascript">
+					function greet(name) {
+						return `Hello, ${name}!`;
+					}
+					console.log(greet("World")); // Hello, World!
+					</code></pre>
+					
+			</section>
+
+			<section>
+				<h2>Interaktiver Editor von JSFiddle</h2>
+				<iframe src="https://codesandbox.io/embed/new"
+					style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox"
+					allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+					sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+			</section>
+
 
 
 			<section>
@@ -99,6 +120,22 @@
 			},
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
+
+		const editor = CodeMirror.fromTextArea(document.getElementById('code-runner'), {
+			lineNumbers: true,
+			mode: 'javascript',
+			theme: 'default'
+		});
+
+		function runCode() {
+			const code = editor.getValue();
+			try {
+				const result = eval(code);
+				document.getElementById('output').textContent = String(result);
+			} catch (err) {
+				document.getElementById('output').textContent = 'Error: ' + err.message;
+			}
+		}
 	</script>
 </body>
 
