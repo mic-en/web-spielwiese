@@ -134,6 +134,17 @@
  .reveal h4 {
    font-size: var(--r-heading4-size);
  }
+
+ /*********************************************
+ * CONTENT UNDER HEADER VERTICALLY CENTERED
+ *********************************************/
+.reveal .slides section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; /* Space for header */
+}
  
  /*********************************************
   * OTHER
