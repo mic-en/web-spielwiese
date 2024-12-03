@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="dist/theme/black-contrast-me.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.css">
@@ -18,12 +18,13 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>
+			<!-- Title Slide (not using special styles) -->
+			<section class="no-special">
 				<h1>JavaScript Overview</h1>
 				<h2>Mit Reveal.js und Eloquent JavaScript</h2>
 			</section>
 
-			<!-- manuelles Inhaltsverzeichnis mit Verlinkung als Alternative zum Plugin
+			<!-- Inhaltsverzeichnis Slide (Table of Contents, also not using special styles) -->
 			<section>
 				<h2>Inhaltsverzeichnis</h2>
 				<ul>
@@ -33,57 +34,74 @@
 					<li><a href="#kapitel-4">Datenstrukturen</a></li>
 					<li><a href="#kapitel-5">Höhere Funktionen</a></li>
 				</ul>
-			</section> -->
+			</section>
 
+			<!-- Regular Slides Using Special Styles -->
 			<section>
 				<h3>Wie füge ich Code Beispiele ein?</h3>
-				<h4>JavaScript Beispiel</h4>
-				<pre><code class="language-javascript">
-					function greet(name) {
-						return `Hello, ${name}!`;
-					}
-					console.log(greet("World")); // Hello, World!
-					</code></pre>
-					
+				<div>
+					<h4>JavaScript Beispiel</h4>
+					<pre><code class="language-javascript">
+						function greet(name) {
+							return `Hello, ${name}!`;
+						}
+						console.log(greet("World")); // Hello, World!
+						</code></pre>
+				</div>
 			</section>
 
 			<section>
-				<h2>Interaktiver Editor von JSFiddle</h2>
-				<iframe src="https://codesandbox.io/embed/new"
-					style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox"
-					allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-					sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+				<h3>Interaktiver Editor von JSFiddle</h3>
+				<div>
+					<iframe src="https://codesandbox.io/embed/new" style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+				</div>
 			</section>
 
 			<section>
-				<h2>Übung direkt von EloquentJS Sandbox</h2>
-				<iframe src="https://eloquentjavascript.net/code/#1"
-					style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox"
-					allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-					sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+				<h3>Übung direkt von EloquentJS Sandbox</h3>
+				<div>
+					<iframe src="https://eloquentjavascript.net/code/#1" style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+				</div>
 			</section>
 
-
-
-			<section>
-				<h2>Werte und Typen</h2>
-				<p>JavaScript unterscheidet primitive Typen und Referenztypen:</p>
-				<ul>
-					<li><strong>Primitive Typen:</strong> Number, String, Boolean, null, undefined, Symbol</li>
-					<li><strong>Referenztypen:</strong> Object, Array, Function</li>
-				</ul>
+			<section id="kapitel-1">
+				<h3>Einleitung</h3>
+				<div>
+					<p>Willkommen zu unserer Einführung in JavaScript mit Reveal.js. JavaScript ist die Programmiersprache des Webs.</p>
+				</div>
 			</section>
 
-			<section>
-				<h2>Operatoren</h2>
-				<pre><code class="javascript">
-					console.log(5 + 3); // Addition
-					console.log(5 == "5"); // Vergleich ohne Typprüfung (true)
-					console.log(5 === "5"); // Vergleich mit Typprüfung (false)
-					</code></pre>
+			<section id="kapitel-2">
+				<h3>Werte, Typen und Operatoren</h3>
+				<div>
+					<p>JavaScript unterscheidet primitive Typen und Referenztypen.</p>
+					<ul>
+						<li><strong>Primitive Typen:</strong> Number, String, Boolean, null, undefined, Symbol</li>
+						<li><strong>Referenztypen:</strong> Object, Array, Function</li>
+					</ul>
+				</div>
 			</section>
 
-			<section>Slide 2</section>
+			<section id="kapitel-3">
+				<h3>Funktionen</h3>
+				<div>
+					<p>Funktionen sind grundlegende Bausteine in JavaScript. Sie ermöglichen Wiederverwendung von Code.</p>
+				</div>
+			</section>
+
+			<section id="kapitel-4">
+				<h3>Datenstrukturen</h3>
+				<div>
+					<p>Objekte und Arrays sind die zentralen Datenstrukturen in JavaScript, die für die Speicherung und Manipulation von Daten verwendet werden.</p>
+				</div>
+			</section>
+
+			<section id="kapitel-5">
+				<h3>Höhere Funktionen</h3>
+				<div>
+					<p>Höhere Funktionen sind Funktionen, die andere Funktionen als Argumente nehmen oder zurückgeben. Sie sind in JavaScript äußerst nützlich.</p>
+				</div>
+			</section>
 		</div>
 	</div>
 
