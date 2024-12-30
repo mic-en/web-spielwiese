@@ -12,50 +12,121 @@
 	<link rel="stylesheet" href="dist/theme/black-contrast-me.css">
 
 	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/night-owl.css">
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>
+			<!-- Title Slide (not using special styles) -->
+			<section class="no-special">
 				<h1>JavaScript Overview</h1>
-				<h3>Mit Reveal.js und Eloquent JavaScript</h3>
+				<h2>Mit Reveal.js und Eloquent JavaScript</h2>
 			</section>
 
-			<!-- manuelles Inhaltsverzeichnis mit Verlinkung als Alternative zum Plugin
-			<section>
-				<h2>Inhaltsverzeichnis</h2>
-				<ul>
-					<li><a href="#kapitel-1">Einleitung</a></li>
-					<li><a href="#kapitel-2">Werte, Typen und Operatoren</a></li>
-					<li><a href="#kapitel-3">Funktionen</a></li>
-					<li><a href="#kapitel-4">Datenstrukturen</a></li>
-					<li><a href="#kapitel-5">Höhere Funktionen</a></li>
-				</ul>
-			</section> -->
-
-
-			<section>
-				<h2>Werte und Typen</h2>
-				<p>JavaScript unterscheidet primitive Typen und Referenztypen:</p>
-				<ul>
-					<li><strong>Primitive Typen:</strong> Number, String, Boolean, null, undefined, Symbol</li>
-					<li><strong>Referenztypen:</strong> Object, Array, Function</li>
-				</ul>
+			<section id="kapitel-1">
+				<h3>Einleitung</h3>
+				<p>Willkommen zu unserer Einführung in JavaScript mit Reveal.js. JavaScript ist die Programmiersprache des Webs.</p>
 			</section>
 
-			<section>
-				<h2>Operatoren</h2>
-				<pre><code class="javascript">
-					console.log(5 + 3); // Addition
-					console.log(5 == "5"); // Vergleich ohne Typprüfung (true)
-					console.log(5 === "5"); // Vergleich mit Typprüfung (false)
+			<section id="kapitel-2">			
+				<!-- Einführung -->
+				<h3>Werte, Typen und Operatoren</h3>
+				<section id="kapitel-2-1">
+							
+					<h4>Einleitung</h4>
+					<p>In JavaScript und Java gibt es Werte und Typen. Beide Sprachen unterscheiden zwischen primitiven und komplexen Datentypen. 
+					In diesem Kapitel betrachten wir die Gemeinsamkeiten und Unterschiede.</p>
+				</section>
+			
+				<!-- Primitive Typen -->
+				<section id="kapitel-2-2">
+					<h4>Primitive Typen</h4>
+					<p>Primitive Typen sind grundlegende, unveränderliche Werte in JavaScript:</p>
+					<ul>
+						<li>Number</li>
+						<li>String</li>
+						<li>Boolean</li>
+						<li>null</li>
+						<li>undefined</li>
+						<li>Symbol</li>
+					</ul>
+				</section>
+
+				<section id="kapitel-2-3">
+					<h4>Primitive Typen</h4>
+					<h5>Unterschiede zu Java</h5>
+					<p>Java hat primitive Datentypen wie <code>int</code>, <code>float</code>, und <code>boolean</code>, die statisch typisiert sind.</p>
+					<pre><code class="language-java">
+			int number = 5;
+			String text = "Hello";
+			boolean isActive = true;
 					</code></pre>
+					<pre><code class="language-javascript">
+			let number = 5;
+			let text = "Hello";
+			let isActive = true;
+					</code></pre>
+					<p>Unterschied: JavaScript ist dynamisch typisiert und erlaubt flexible Typkonvertierungen.</p>
+				</section>
+			
+				<!-- Automatic Type Conversion -->
+				<section id="kapitel-2-4">
+					<h4>Automatic Type Conversion</h4>
+					<p>JavaScript versucht oft, Werte automatisch zu konvertieren, wenn unterschiedliche Typen aufeinandertreffen:</p>
+					<pre><code class="language-javascript">
+			console.log(5 + "5"); // "55"
+			console.log(5 - "3"); // 2
+			console.log(true + 1); // 2
+					</code></pre>
+					<h4>Vergleichsoperatoren</h4>
+					<p>Die automatische Typkonvertierung kann zu unerwartetem Verhalten führen, besonders bei <code>==</code>:</p>
+					<pre><code class="language-javascript">
+			console.log(5 == "5"); // true (automatische Konvertierung)
+			console.log(5 === "5"); // false (strikter Vergleich)
+					</code></pre>
+				</section>
+			
+				<!-- typeof Operator -->
+				<section id="kapitel-2-5">
+					<h4>`typeof`-Operator</h4>
+					<p>In JavaScript kannst du den Typ eines Wertes mit <code>typeof</code> überprüfen:</p>
+					<pre><code class="language-javascript">
+			console.log(typeof 42); // "number"
+			console.log(typeof "Hello"); // "string"
+			console.log(typeof null); // "object" (historischer Fehler)
+			console.log(typeof undefined); // "undefined"
+					</code></pre>
+				</section>
+
+				<section id="kapitel-2-6">
+					<h4>Übung direkt von EloquentJS Sandbox</h4>
+					<iframe src="https://eloquentjavascript.net/code/#1"
+						style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox"
+						allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+						sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+				</section>
+			</section>
+
+			
+
+			<section id="kapitel-3">
+				<h3>Funktionen</h3>
+				<p>Funktionen sind grundlegende Bausteine in JavaScript. Sie ermöglichen Wiederverwendung von Code.</p>
+			</section>
+
+			<section id="kapitel-4">
+				<h3>Datenstrukturen</h3>
+				<p>Objekte und Arrays sind die zentralen Datenstrukturen in JavaScript, die für die Speicherung und Manipulation von Daten verwendet werden.</p>
+			</section>
+
+			<section id="kapitel-5">
+				<h3>Höhere Funktionen</h3>
+				<p>Höhere Funktionen sind Funktionen, die andere Funktionen als Argumente nehmen oder zurückgeben. Sie sind in JavaScript äußerst nützlich.</p>
 			</section>
 
 			<section>
-				<h2>Interaktiver Editor von JSFiddle</h2>
+				<h3>Interaktiver Editor von JSFiddle</h3>
 				<iframe src="https://codesandbox.io/embed/h4365z?view=editor+%2B+preview"
 					style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
 					title="reveal-eloquentjs"
@@ -63,16 +134,13 @@
 					sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 			</section>
 
-
 			<section>
-				<h2>Übung direkt von EloquentJS Sandbox</h2>
+				<h3>Übung direkt von EloquentJS Sandbox</h3>
 				<iframe src="https://eloquentjavascript.net/code/#1"
 					style="width: 100%; height: 500px; border: 0; overflow: hidden;" title="JavaScript Sandbox"
 					allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; usb; vr; xr-spatial-tracking"
 					sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 			</section>
-
-			<section>Slide 2</section>
 		</div>
 	</div>
 
@@ -102,11 +170,11 @@
 				position: 2,
 
 				// Specifies html tag in which the table of contents title stands
-				titleTag: "h2",
+				titleTag: "h3",
 
 				// Specifies which slide tag elements will be used
 				// for generating the table of contents.
-				titleTagSelector: "h1, h2",
+				titleTagSelector: "h3",
 
 				// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
 				ignoreFirstSlide: true,
