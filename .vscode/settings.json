@@ -1,3 +1,7 @@
 {
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.stickyScroll.maxLineCount": 5,
+    "workbench.tree.enableStickyScroll": false,
+    "editor.hover.sticky": true,
+    "editor.stickyScroll.enabled": false
 }
