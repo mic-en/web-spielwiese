@@ -26,55 +26,59 @@
 
 			<section id="kapitel-1">
 				<h3>Einleitung</h3>
-				<p>Willkommen zu unserer Einführung in JavaScript mit Reveal.js. JavaScript ist die Programmiersprache des Webs.</p>
+				<p>Willkommen zu unserer Einführung in JavaScript mit Reveal.js. JavaScript ist die Programmiersprache
+					des Webs.</p>
 			</section>
 
-			<section id="kapitel-2">			
+			<section id="kapitel-2">
 				<!-- Einführung -->
 				<h3>Werte, Typen und Operatoren</h3>
 				<section id="kapitel-2-1">
-							
+
 					<h4>Einleitung</h4>
-					<p>In JavaScript und Java gibt es Werte und Typen. Beide Sprachen unterscheiden zwischen primitiven und komplexen Datentypen. 
-					In diesem Kapitel betrachten wir die Gemeinsamkeiten und Unterschiede.</p>
+					<p>In JavaScript und Java gibt es Werte und Typen. Beide Sprachen unterscheiden zwischen primitiven
+						und komplexen Datentypen.
+						In diesem Kapitel betrachten wir die Gemeinsamkeiten und Unterschiede.</p>
 				</section>
-			
-				<!-- Primitive Typen -->
+
 				<section id="kapitel-2-2">
 					<h4>Primitive Typen</h4>
-					<p>Primitive Typen sind grundlegende, unveränderliche Werte in JavaScript:</p>
-					<ul>
-						<li>Number</li>
-						<li>String</li>
-						<li>Boolean</li>
-						<li>null</li>
-						<li>undefined</li>
-						<li>Symbol</li>
-					</ul>
+					<div class="two-column-container">
+						<p>Primitive Typen sind grundlegende, unveränderliche Werte in JavaScript</p>
+						<ul>
+							<li>Number</li>
+							<li>String</li>
+							<li>Boolean</li>
+							<li>null</li>
+							<li>undefined</li>
+							<li>Symbol</li>
+						</ul>
+					</div>
 				</section>
 
 				<section id="kapitel-2-3">
 					<h4>Unterschiede zu Java</h4>
 					<p>Java hat primitive Datentypen wie int, float und boolean, die statisch typisiert sind.</p>
-					<div class="code-comparison-container">
+					<div class="two-column-container">
 						<pre><code class="language-java">
-							int number = 5;
-							String text = "Hello";
-							boolean isActive = true;
-						</code></pre>
+					  int number = 5;
+					  String text = "Hello";
+					  boolean isActive = true;
+					</code></pre>
 						<pre><code class="language-javascript">
-							let number = 5;
-							let text = "Hello";
-							let isActive = true;
-						</code></pre>
+					  let number = 5;
+					  let text = "Hello";
+					  let isActive = true;
+					</code></pre>
 					</div>
 					<p>Unterschied: JavaScript ist dynamisch typisiert und erlaubt flexible Typkonvertierungen.</p>
 				</section>
-			
+
 				<!-- Automatic Type Conversion -->
 				<section id="kapitel-2-4">
 					<h4>Automatic Type Conversion</h4>
-					<p>JavaScript versucht oft, Werte automatisch zu konvertieren, wenn unterschiedliche Typen aufeinandertreffen:</p>
+					<p>JavaScript versucht oft, Werte automatisch zu konvertieren, wenn unterschiedliche Typen
+						aufeinandertreffen:</p>
 					<pre><code class="language-javascript">
 			console.log(5 + "5"); // "55"
 			console.log(5 - "3"); // 2
@@ -84,13 +88,15 @@
 
 				<section id="kapitel-2-5">
 					<h4>Vergleichsoperatoren</h4>
-					<p>Die automatische Typkonvertierung kann zu unerwartetem Verhalten führen, besonders bei <code>==</code>:</p>
+					<p>Die automatische Typkonvertierung kann zu unerwartetem Verhalten führen, besonders bei
+						<code>==</code>:
+					</p>
 					<pre><code class="language-javascript">
 			console.log(5 == "5"); // true (automatische Konvertierung)
 			console.log(5 === "5"); // false (strikter Vergleich)
 					</code></pre>
 				</section>
-			
+
 				<!-- typeof Operator -->
 				<section id="kapitel-2-6">
 					<h4>`typeof`-Operator</h4>
@@ -112,7 +118,7 @@
 				</section>
 			</section>
 
-			
+
 
 			<section id="kapitel-3">
 				<h3>Funktionen</h3>
@@ -121,12 +127,14 @@
 
 			<section id="kapitel-4">
 				<h3>Datenstrukturen</h3>
-				<p>Objekte und Arrays sind die zentralen Datenstrukturen in JavaScript, die für die Speicherung und Manipulation von Daten verwendet werden.</p>
+				<p>Objekte und Arrays sind die zentralen Datenstrukturen in JavaScript, die für die Speicherung und
+					Manipulation von Daten verwendet werden.</p>
 			</section>
 
 			<section id="kapitel-5">
 				<h3>Höhere Funktionen</h3>
-				<p>Höhere Funktionen sind Funktionen, die andere Funktionen als Argumente nehmen oder zurückgeben. Sie sind in JavaScript äußerst nützlich.</p>
+				<p>Höhere Funktionen sind Funktionen, die andere Funktionen als Argumente nehmen oder zurückgeben. Sie
+					sind in JavaScript äußerst nützlich.</p>
 			</section>
 
 			<section>

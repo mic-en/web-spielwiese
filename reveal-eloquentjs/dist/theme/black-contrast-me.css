@@ -99,10 +99,14 @@
    transform: translate(0%, -50%);
  }
 
- .reveal .slides .code-comparison-container {
+.reveal .slides .two-column-container {
   display: flex;
-  gap: 20px; 
   flex-direction: row;
+  gap: 20px;
+}
+
+.reveal .slides .two-column-container > * {
+  flex: 1;
 }
  
  
