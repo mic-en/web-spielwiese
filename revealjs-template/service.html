@@ -1,0 +1,166 @@
+<section id="service">
+    <h1>Service</h1>
+    <ul style="font-size: 1.8rem">
+        <li>Abstraktionsschicht für eine Menge an Pods</li>
+        <li>kann Load Balancing</li>
+        <li>ermöglicht Zugriff innerhalb des Clusters unter eindeutigem Namen</li>
+        <li>kann über NodePort Zugriff von außen ermöglichen</li>
+    </ul>
+</section>
+<section>
+    <h2>Service</h2>
+    <div data-svg-fragment="assets/deployments_dark.svg#[*|label=base]">
+        <a class="show-svg" data-selector="[*|label=base]"></a>
+        <a class="show-svg" data-selector="[*|label=deployment1]"></a>
+        <a class="show-svg" data-selector="[*|label=deployment2]"></a>
+        <a class="show-svg" data-selector="[*|label=deployment3]"></a>
+        <a class="hide-svg" data-selector="[*|label=upgrade1]"></a>
+        <a class="hide-svg" data-selector="[*|label=upgrade2]"></a>
+        <a class="hide-svg" data-selector="[*|label=upgrade3]"></a>
+        <a class="hide-svg" data-selector="[*|label=ingress]"></a>
+        <a class="fragment" data-selector="[*|label=service1]"></a>
+        <a class="fragment" data-selector="[*|label=service2]"></a>
+    </div>
+</section>
+<section>
+    <h2>Service Manifest</h2>
+    <pre data-id="code-animation"><code data-line-numbers="2,4|10,11|13-15" class="language-yaml" data-trim>
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-demo-vx-svc
+  labels:
+    app: k8s-demo-vx
+    app.kubernetes.io/name: k8s-demo-vx-svc
+    app.kubernetes.io/component: server
+spec:
+  selector:
+    app: k8s-demo-vx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http-app
+    </code></pre>
+</section>
+<section>
+    <h2>Service anlegen</h2>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+            # Services anzeigen lassen
+            $ k get services
+            No resources found in workshop namespace.
+        </code></pre>
+    </div>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+            # Service anlegen
+            $ k apply -f k8s-demo-vx-service.yaml
+            service/k8s-demo-vx-svc created
+        </code></pre>
+    </div>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+            $ k get svc
+            NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+            k8s-demo-vx-svc   ClusterIP   10.43.156.185   &lt;none&gt;        80/TCP    46s
+        </code></pre>
+        <aside class="notes">Es ist nur eine Cluster-IP vergeben, keine External-IP</aside>
+    </div>
+</section>
+<section>
+    <h2>Service benutzen</h2>
+    <p style="font-size: 1.5rem"><a href="https://stefan-niemeyer.github.io/k8s-workshop#/bonus-service" target="_blank">Bonusaufgaben Service</a></p>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:0.9rem;" class="language-console" data-trim>
+            # Alias für Hilfspod benutzen (ist über .profile definiert)
+            # alias ktools='kubectl run tools --rm -it --image wbitt/network-multitool -- /bin/bash'
+            $ ktools
+        </code></pre>
+    </div>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:0.8rem;" class="language-console" data-trim>
+            # Anwendung innerhalb des Clusters über Service aufrufen
+            $ curl -w " -&gt; %{response_code}\n" http://k8s-demo-vx-svc/state
+
+            # oder kontinuierlicher curl
+            $ for i in {1..120}; do curl -w " -&gt; %{response_code}\n" http://k8s-demo-vx-svc/state; sleep 1; done
+        </code></pre>
+    </div>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:0.9rem;" class="language-console" data-trim>
+            # Pod von anderem Tab aus löschen (oder tmux Strg-b ")
+            $ k delete pod -l app=k8s-demo-vx
+        </code></pre>
+    </div>
+    <div class="fragment">
+        <pre data-id="code-animation"><code style="font-size:0.9rem;" class="language-plaintext" data-trim>
+            # In dem Hilfspod sieht man einen Wechsel des Hostnamens
+            # {"host":"k8s-demo-vx-5dccdc4db6-4km5w",...,"totalRequests":26,...} -&gt; 200
+            # {"host":"k8s-demo-vx-5dccdc4db6-zcv5g",...,"totalRequests":1,...} -&gt; 200
+
+            # "host" ändert sich und "totalRequests" beginnt bei 1
+        </code></pre>
+    </div>
+</section>
+<section>
+    <h2>Skalieren</h2>
+    <div class="fragment">
+		<pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+			$ k get replicaset
+			NAME                       DESIRED   CURRENT   READY   AGE
+			k8s-demo-vx-57b5dcd478     1         1         1       1h
+		</code></pre>
+    </div>
+    <div class="fragment">
+		<pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+			$ k scale deployments/k8s-demo-vx --replicas=3
+		</code></pre>
+    </div>
+    <div class="fragment">
+		<pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+			$ k get pods -o wide
+			NAME                           READY   STATUS    RESTARTS   AGE   IP
+			k8s-demo-vx-84454c4c9d-2q8bh   1/1     Running   0          17m   10.42.0.56
+			k8s-demo-vx-84454c4c9d-559b8   1/1     Running   0          87s   10.42.0.57
+			k8s-demo-vx-84454c4c9d-94lb8   1/1     Running   0          87s   10.42.0.58
+
+			# Die Pods haben eigene IP-Adressen im Cluster
+		</code></pre>
+    </div>
+    <div class="fragment">
+		<pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+			$ k get rs
+			NAME                     DESIRED   CURRENT   READY   AGE
+			k8s-demo-vx-57b5dcd478   3         3         3       1h
+		</code></pre>
+    </div>
+</section>
+<section>
+    <h2>Ausfallsicherheit testen</h2>
+    <div>
+		<pre data-id="code-animation"><code style="font-size:1rem;" class="language-console" data-trim>
+			# Anwendung mittels Schleife aufrufen
+			$ kubectl run loop --rm -it --image wbitt/network-multitool -- \
+                  bash -c 'while true; do curl -w " -> %{response_code}\n" \
+                           http://k8s-demo-vx-svc/state; sleep 1; done'
+
+			# In anderem Tab Pods löschen (oder tmux Strg-b ")
+			$ kubectl exec -it loop -- \
+                  bash -c 'curl -w " -> %{response_code}\n" http://k8s-demo-vx-svc/crash'
+		</code></pre>
+    </div>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ## Gelöst
+        - Höhere Verfügbarkeit durch mehrere Pods und automatische Restarts <!-- .element: class="fragment" -->
+        - Anwendung ist im Cluster über festen Namen erreichbar<!-- .element: class="fragment" -->
+        - Service übernimmt Load-Balancing<!-- .element: class="fragment" -->
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+        ## Offene Probleme
+        - App noch nicht von außerhalb des Clusters erreichbar
+    </script>
+</section>

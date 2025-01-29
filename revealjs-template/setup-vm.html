@@ -1,0 +1,21 @@
+<section data-markdown id="setup">
+    # Setup
+</section>
+<section data-menu-title="login">
+    <p>Anmeldung an VM</p>
+    <pre data-id="code-animation"><code style="font-size:1.4rem;" class="language-console" data-trim>
+        # MEIN-USER = "Vorname" + "-" + "Erster Buchstabe Nachname";
+        # Der Host-Alias ist identisch zu MEIN-USER
+        $ ssh MEIN-USER@MEIN-USER.laserschwert.io
+        # Jane Doe -&gt; jane-d@jane-d.laserschwert.io
+    </code></pre>
+</section>
+<section data-menu-title="git">
+    <p>Workshop-Repo klonen</p>
+    <pre data-id="code-animation"><code style="font-size:1.4rem;" class="language-console" data-trim>
+        $ git clone https://github.com/stefan-niemeyer/k8s-workshop.git
+        $ cd k8s-workshop
+        $ ./replace-host.sh
+    </code></pre>
+</section>
+<section data-external="tmux-basics.html"></section>
