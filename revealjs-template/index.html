@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
     <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<link rel="stylesheet" href="dist/slide-layouts.css">
+
 
     <script src="dist/reveal.js"></script>
     <script src="plugin/notes/notes.js"></script>
@@ -22,8 +24,8 @@
             <section data-markdown>
                 # RevealJS Demo 
             </section>
-            <section data-external="slides/title.html" id="uebersicht"></section>
-            <section data-external="slides/title-content.html"></section>
+            <section data-external="slides/titleslide.html" class="layout-title-slide" id="titelslide"></section>
+            <section data-external="slides/title-content.html" class="layout-title-content" id="titel-content-slide"></section>
             <section data-external="slides/title-2columns.html"></section>
             <section data-external="slides/title-content-image.html"></section>
             <section data-external="slides/title-image-content.html"></section>
@@ -55,6 +57,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				center: false,
 
 				// Activate the scroll view
 				// view: 'scroll',

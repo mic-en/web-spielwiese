@@ -1,0 +1,250 @@
+/**************************************************************
+ * Basis: Keine globale absolute Positionierung!
+ * ------------------------------------------------------------
+ * Falls du global Überschriften anpassen willst, 
+ * mach es OHNE position:absolute.
+ **************************************************************/
+ .reveal h1,
+ .reveal h2 {
+     /* Beispiel: etwas weniger Margin, zentrieren,
+        aber KEIN absolutes Positionieren mehr */
+     margin: 0.5em 0;
+     text-align: center; 
+     /* ggf. Font-Size anpassen, z. B.: 
+     font-size: 2em; 
+     */
+ }
+ 
+ /**************************************************************
+  * 1) TITELFOLIE (Große Überschrift mittig, darunter Sub-Titel)
+  **************************************************************/
+ .layout-title-slide {
+     /* Ganze Folie in 100% Höhe als Flex Container */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; /* oder min-height: 100vh */
+     padding: 2em;  /* etwas "Innenabstand" */
+ }
+ 
+ /* Haupt-Titel */
+ .layout-title-slide h1 {
+     font-size: 3em; /* extra groß */
+     margin: 0.2em 0; 
+ }
+ 
+ /* Untertitel (falls du z.B. ein h2 dafür nutzt) */
+ .layout-title-slide h2 {
+     font-size: 1.5em;
+     margin: 0.2em 0;
+     opacity: 0.8; /* leicht abgehoben, optional */
+ }
+ 
+ /**************************************************************
+  * 2) TITEL + INHALT
+  *    Überschrift ganz oben, darunter großer Block für Inhalt
+  **************************************************************/
+ .layout-title-content {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     /* Optionaler Abstand oben, damit der Titel nicht 
+        direkt an den Rand knallt */
+     padding-top: 0; 
+     padding-left: 2em;
+     padding-right: 2em;
+     /* Du kannst justify-content: flex-start; lassen,
+        so bleibt der Titel oben und der Inhalt kommt darunter. */
+ }
+ 
+ .layout-title-content h1,
+ .layout-title-content h2 {
+     margin-bottom: 1em; 
+     /* Falls hier ein größerer Titel gewünscht ist: */
+     font-size: 2.2em;
+ }
+ 
+ .layout-title-content .content-area {
+     /* Für den Inhalt kannst du eine umschließende DIV 
+        mit .content-area definieren */
+     flex: 1; 
+     /* Füllt den restlichen Platz nach dem Titel */
+     margin-top: 1em; 
+     /* Ggf. noch weitere Styles … */
+     overflow: auto; 
+     /* Falls sehr viel Content */
+ }
+ 
+ /**************************************************************
+  * 3) TITEL + 2 INHALTE (2 Spalten unter dem Titel)
+  **************************************************************/
+ .layout-title-2columns {
+     display: grid;
+     /* Titel in Zeile 1 (gesamte Breite), 
+        darunter 2 Spalten für Inhalte */
+     grid-template-rows: auto 1fr;
+     grid-template-columns: 1fr 1fr;
+     height: 100vh;
+     gap: 1em;
+     padding: 2em;
+ }
+ 
+ .layout-title-2columns h1,
+ .layout-title-2columns h2 {
+     /* Überschrift soll über beide Spalten gehen */
+     grid-column: 1 / span 2; 
+     /* Zentrierung optional */
+     margin-bottom: 0.5em;
+ }
+ 
+ /* Linke Spalte */
+ .layout-title-2columns .col-left {
+     /* Automatisch in grid-column: 1 */
+     overflow: auto;
+ }
+ 
+ /* Rechte Spalte */
+ .layout-title-2columns .col-right {
+     /* Automatisch in grid-column: 2 */
+     overflow: auto;
+ }
+ 
+ /**************************************************************
+  * 4) TITEL + INHALT + BILD RECHTS
+  **************************************************************/
+ .layout-title-content-image {
+     display: grid;
+     grid-template-rows: auto 1fr;
+     /* 2fr für Content, 1fr für das Bild */
+     grid-template-columns: 2fr 1fr; 
+     height: 100vh;
+     gap: 1em;
+     padding: 2em;
+ }
+ 
+ .layout-title-content-image h1,
+ .layout-title-content-image h2 {
+     grid-column: 1 / span 2; 
+     margin-bottom: 0.5em;
+ }
+ 
+ /* Bereich für Text (Inhalt) */
+ .layout-title-content-image .content-area {
+     grid-row: 2; 
+     grid-column: 1; 
+     overflow: auto;
+ }
+ 
+ /* Bereich fürs Bild */
+ .layout-title-content-image .image-area {
+     grid-row: 2; 
+     grid-column: 2;
+     display: flex; 
+     align-items: center; 
+     justify-content: center; 
+ }
+ 
+ /* Bild anpassen */
+ .layout-title-content-image img {
+     max-width: 100%;
+     height: auto;
+ }
+ 
+ /**************************************************************
+  * 5) TITEL + BILD LINKS + INHALT RECHTS
+  **************************************************************/
+ .layout-title-image-content {
+     display: grid;
+     grid-template-rows: auto 1fr;
+     /* 1fr für Bild, 2fr für Content, also anders herum */
+     grid-template-columns: 1fr 2fr; 
+     height: 100vh;
+     gap: 1em;
+     padding: 2em;
+ }
+ 
+ .layout-title-image-content h1,
+ .layout-title-image-content h2 {
+     grid-column: 1 / span 2; 
+     margin-bottom: 0.5em;
+ }
+ 
+ /* Bild links */
+ .layout-title-image-content .image-area {
+     grid-row: 2; 
+     grid-column: 1;
+     display: flex; 
+     align-items: center; 
+     justify-content: center; 
+ }
+ 
+ /* Inhalt rechts */
+ .layout-title-image-content .content-area {
+     grid-row: 2; 
+     grid-column: 2; 
+     overflow: auto;
+ }
+ 
+ .layout-title-image-content img {
+     max-width: 100%;
+     height: auto;
+ }
+ 
+ /**************************************************************
+  * 6) TITEL + 4 QUADRANTEN
+  **************************************************************/
+ .layout-title-4quadrants {
+     display: grid;
+     /* Erste Reihe: Titel allein
+        Dann 2 Reihen x 2 Spalten = 4 Felder */
+     grid-template-rows: auto 1fr 1fr; 
+     grid-template-columns: 1fr 1fr; 
+     height: 100vh;
+     gap: 1em;
+     padding: 2em;
+ }
+ 
+ .layout-title-4quadrants h1,
+ .layout-title-4quadrants h2 {
+     /* Titel über beide Spalten */
+     grid-column: 1 / span 2; 
+     margin-bottom: 0.5em;
+ }
+ 
+ .layout-title-4quadrants .quad {
+     /* Fülle je eine der vier Zellen 
+        – Option: border, padding o.Ä. */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: 2px solid #ccc; /* Demo */
+     padding: 1em;
+ }
+ /* Je nach Bedarf kannst du .quad1, .quad2, .quad3, .quad4 definieren */
+ 
+ /**************************************************************
+  * RESPONSIVE BREAKPOINTS
+  * Falls auf Mobilgeräten die 2-Spalten-Layouts 
+  * oder 4Quadranten z.B. einspaltig sein sollen
+  **************************************************************/
+ @media (max-width: 768px) {
+   .layout-title-2columns {
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto;
+   }
+   .layout-title-content-image {
+     grid-template-columns: 1fr; 
+     grid-template-rows: auto auto;
+   }
+   .layout-title-image-content {
+     grid-template-columns: 1fr; 
+     grid-template-rows: auto auto;
+   }
+   .layout-title-4quadrants {
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto auto auto; 
+     /* 1x4 statt 2x2 */
+   }
+ }
+ 
