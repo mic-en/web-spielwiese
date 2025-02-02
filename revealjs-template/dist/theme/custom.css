@@ -1,0 +1,60 @@
+/* Ergänzende Layout-Anpassungen */
+.reveal h1, .reveal h2, .reveal h3 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+}
+
+/* Titelfolie */
+.title-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Titel + Inhalt */
+.title-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Titel + 2 Spalten */
+.title-2columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Titel + Inhalt + Bild rechts */
+.title-content-image {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Titel + Bild links + Inhalt rechts */
+.title-image-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* Titel + 4 Quadranten */
+.title-4quadrants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 100vh;
+}
+
+/* Black Theme einbinden */
+@import url('black.css');

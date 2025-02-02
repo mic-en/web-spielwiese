@@ -1,59 +1,37 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>K8s Workshop</title>
+    <title>Reveal.js Template</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<section data-markdown>
-						# Kubernetes Workshop
-					</section>
-					<section data-external="introduction.html" id="uebersicht"></section>
-					<section data-external="schedule.html" data-markdown></section>
-					<section data-external="toc.html" id="inhalt"></section>
-					<section data-menu-title="Confused Dog Meme">
-						<img src="./assets/deployment-strategien-meme.gif" alt="Deployment Strategien Meme">
-					</section>
-					<section data-external="reveal-navigation.html"></section>
-				</section>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                # RevealJS Demo 
+            </section>
+            <section data-external="slides/title.html" id="uebersicht"></section>
+            <section data-external="slides/title-content.html"></section>
+            <section data-external="slides/title-2columns.html"></section>
+            <section data-external="slides/title-content-image.html"></section>
+            <section data-external="slides/title-image-content.html"></section>
+            <section data-external="slides/title-4quadrants.html"></section>
+        </div>
+    </div>
 
-				<section data-external="installation-und-wartung.html"></section>
-				<section data-external="images-container.html"></section>
-				<section data-external="setup-vm.html"></section>
-				<section data-external="showtime-pods.html"></section>
-				<section data-external="deployment.html"></section>
-				<section data-external="service.html"></section>
-				<section data-external="ingress.html"></section>
-
-				<section data-external="deployment-strategies-toc.html"></section>
-				<section data-external="rolling-update.html"></section>
-				<section data-external="blue-green.html"></section>
-				<section data-external="blue-green-deploy.html"></section>
-				<section data-external="canary.html"></section>
-				<section data-external="canary-deploy.html"></section>
-
-				<section>
-					<section data-external="next-steps.html"></section>
-					<section data-external="the-end.html"></section>
-					<section data-external="references.html"></section>
-				</section>
-				<section data-external="bonustasks.html"></section>
-			</div>
-		</div>
-
-		<script src="dist/reveal.js"></script>
+    <script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
@@ -252,5 +230,5 @@
 				}
 			});
 		</script>
-	</body>
+</body>
 </html>
